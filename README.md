@@ -24,17 +24,14 @@ Sistema web para gerenciamento de consultas veterinárias desenvolvido com React
 
 <h2>📸 Screenshots</h2>
 
-<p align="center">
-  <img src="./src/assets/screenshots/VetNelliFront/home.png" width="700">
-</p>
+<h3>Home</h3>
+<img src="./src/assets/screenshots/VetNelliFront/home.png" width="800">
 
-<p align="center">
-  <img src="./src/assets/screenshots/VetNelliFront/cadastro.png" width="700">
-</p>
+<h3>Cadastro de Consulta</h3>
+<img src="./src/assets/S=screenshots/VetNelliFront/cadastro.png" width="800">
 
-<p align="center">
-  <img src="./src/assets/screenshots/VetNelliFront/consultas.png" width="700">
-</p>
+<h3>Gerenciamento de Consultas</h3>
+<img src="./src/assets/screenshots/VetNelliFront/consultas.png" width="800">
 
 ## 📁 Estrutura do Projeto
 
