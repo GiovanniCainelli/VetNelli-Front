@@ -1,0 +1,598 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Playfair+Display:wght@500;600&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg-base: #0d0f12;
+    --bg-surface: #13171d;
+    --bg-card: #181d24;
+    --bg-card-hover: #1e242e;
+    --border: #252c38;
+    --border-light: #2e3848;
+
+    --accent: #3ddc84;
+    --accent-dim: rgba(61, 220, 132, 0.12);
+    --accent-glow: rgba(61, 220, 132, 0.25);
+
+    --danger: #f05656;
+    --danger-dim: rgba(240, 86, 86, 0.12);
+
+    --warning: #f5a623;
+    --warning-dim: rgba(245, 166, 35, 0.12);
+
+    --blue: #5b8dee;
+    --blue-dim: rgba(91, 141, 238, 0.12);
+
+    --text-primary: #e8ecf2;
+    --text-secondary: #8d99ab;
+    --text-muted: #4e5d6e;
+
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 18px;
+
+    --shadow-card: 0 2px 16px rgba(0, 0, 0, 0.4), 0 1px 4px rgba(0, 0, 0, 0.3);
+    --shadow-hover: 0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+
+.page {
+    min-height: 100vh;
+    background-color: var(--bg-base);
+    background-image:
+        radial-gradient(ellipse 80% 40% at 50% -10%, rgba(61, 220, 132, 0.07) 0%, transparent 70%);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-primary);
+}
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 40px 20px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(13, 15, 18, 0.85);
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--text-primary);
+    padding-right: 40px;
+}
+
+.header h1 span {
+    color: var(--accent);
+}
+
+
+
+.pesquisa-wrapper {
+    flex: 1;
+    max-width: 360px;
+    position: relative;
+}
+
+.pesquisa-wrapper svg {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+.pesquisa {
+    width: 100%;
+    padding: 10px 14px 10px 40px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+}
+
+.pesquisa::placeholder {
+    color: var(--text-muted);
+}
+
+.pesquisa:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+
+.btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 18px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    color: var(--text-secondary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.btn-voltar:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-light);
+    color: var(--text-primary);
+}
+
+.btn-criar {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 18px;
+    background: var(--accent);
+    border: none;
+    border-radius: var(--radius-sm);
+    color: #0d0f12;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.btn-criar:hover {
+    background: #4fffaa;
+    box-shadow: 0 0 20px var(--accent-glow);
+    transform: translateY(-1px);
+}
+
+.mensagem-erro-consultas {
+    padding: 12px 18px;
+    background: var(--danger-dim);
+    border: 1px solid rgba(240, 86, 86, 0.3);
+    border-radius: var(--radius-sm);
+    color: #f7a0a0;
+    font-size: 0.875rem;
+    max-width: 1400px;
+}
+
+
+.stats-bar {
+    display: flex;
+    gap: 10px;
+    padding: 0 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.stat-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    opacity: 0.6;
+}
+
+.stat-chip:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.stat-chip.ativo {
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.stat-chip.total {
+    background: var(--accent-dim);
+    border-color: rgba(61, 220, 132, 0.2);
+    color: var(--accent);
+}
+
+.stat-chip.agendada {
+    background: var(--blue-dim);
+    border-color: rgba(91, 141, 238, 0.2);
+    color: var(--blue);
+}
+
+.stat-chip.atend {
+    background: var(--warning-dim);
+    border-color: rgba(245, 166, 35, 0.2);
+    color: var(--warning);
+}
+
+.stat-chip.final {
+    background: var(--accent-dim);
+    border-color: rgba(61, 220, 132, 0.2);
+    color: #3ddc84;
+}
+
+
+.consultas-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    padding: 0 40px 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+.consulta-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+    display: flex;
+    flex-direction: column;
+    animation: cardIn 0.35s ease both;
+}
+
+.consulta-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--border-light);
+}
+
+@keyframes cardIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.consulta-card:nth-child(1) {
+    animation-delay: 0.04s;
+}
+
+.consulta-card:nth-child(2) {
+    animation-delay: 0.08s;
+}
+
+.consulta-card:nth-child(3) {
+    animation-delay: 0.12s;
+}
+
+.consulta-card:nth-child(4) {
+    animation-delay: 0.16s;
+}
+
+.consulta-card:nth-child(5) {
+    animation-delay: 0.20s;
+}
+
+.consulta-card:nth-child(6) {
+    animation-delay: 0.24s;
+}
+
+
+.card-name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px 14px;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.015);
+}
+
+.name-icon {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-name h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    letter-spacing: 0.01em;
+}
+
+.card-name .pet-icon {
+    font-size: 1.3rem;
+    opacity: 0.7;
+}
+
+
+.card-body {
+    padding: 18px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+}
+
+.card-info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 16px;
+    row-gap: 10px;
+    justify-content: center;
+}
+
+.card-info dt {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    white-space: nowrap;
+    align-self: flex-start;
+}
+
+.card-info dd {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    word-break: break-word;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.status-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+
+.card-info dd .status-AGENDADA {
+    color: var(--blue);
+}
+
+.card-info dd .status-EM_ATENDIMENTO {
+    color: var(--warning);
+}
+
+.card-info dd .status-FINALIZADA {
+    color: var(--accent);
+}
+
+
+.card-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0 -20px;
+}
+
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.btn-editar,
+.btn-salvar,
+.btn-cancelar,
+.btn-deletar {
+    flex: 1;
+    padding: 9px 14px;
+    border-radius: var(--radius-sm);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    border: 1px solid transparent;
+}
+
+.btn-editar {
+    background: transparent;
+    border-color: var(--border-light);
+    color: var(--text-secondary);
+}
+
+.btn-editar:hover {
+    background: var(--bg-card-hover);
+    color: var(--text-primary);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btn-salvar {
+    background: var(--accent);
+    color: #0d0f12;
+    border-color: var(--accent);
+}
+
+.btn-salvar:hover {
+    background: #4fffaa;
+    box-shadow: 0 0 14px var(--accent-glow);
+}
+
+.btn-cancelar {
+    background: transparent;
+    border-color: var(--border-light);
+    color: var(--text-muted);
+}
+
+.btn-cancelar:hover {
+    background: var(--bg-card-hover);
+    color: var(--text-secondary);
+}
+
+.btn-deletar {
+    background: transparent;
+    border-color: rgba(240, 86, 86, 0.25);
+    color: var(--danger);
+    flex: 0;
+    padding: 9px 16px;
+}
+
+.btn-deletar:hover {
+    background: var(--danger-dim);
+    border-color: var(--danger);
+}
+
+
+.card-info input,
+.card-info select,
+.card-name input {
+    background: var(--bg-base);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-sm);
+    color: var(--text-primary);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    padding: 6px 10px;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card-info input:focus,
+.card-info select:focus,
+.card-name input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.card-info select option {
+    background: var(--bg-surface);
+}
+
+.card-name input {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+}
+
+
+.empty-state {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 80px 20px;
+    color: var(--text-muted);
+}
+
+.empty-state .empty-icon {
+    font-size: 3rem;
+    opacity: 0.4;
+}
+
+.empty-state p {
+    font-size: 0.95rem;
+}
+
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.modal {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 28px 32px;
+    max-width: 400px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: var(--shadow-hover);
+}
+
+.modal h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+}
+
+.modal p {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+.modal-actions .btn-cancelar,
+.modal-actions .btn-deletar {
+    flex: 0;
+    padding: 9px 20px;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 20px;
+    }
+
+
+
+    .pesquisa-wrapper {
+        max-width: 100%;
+        order: 3;
+        flex: 0 0 100%;
+    }
+
+    .consultas-container {
+        padding: 0 20px 40px;
+        grid-template-columns: 1fr;
+    }
+
+    .stats-bar {
+        padding: 0 20px 16px;
+        flex-wrap: wrap;
+    }
+
+}
