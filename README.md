@@ -56,7 +56,7 @@ src
 └── main.jsx
 ```
 
-## Arquitetura do Projetod
+## Arquitetura do Projeto
 
 Esta aplicação utiliza uma API REST desenvolvida separadamente em Spring Boot.
 
