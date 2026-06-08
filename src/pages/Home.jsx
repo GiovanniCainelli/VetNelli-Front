@@ -6,18 +6,28 @@ function Home() {
 
   return (
     <main className="home">
-      <div className="home-container">
-        <header>
-          <h1>VetNelli 🐾</h1>
-          <p>Sistema de Gerenciamento Veterinário</p>
-        </header>
+      <section className="home-container">
 
-        <section>
-          <button className="btn-entrar" onClick={() => navigate("/consultas")}>
-            Entrar
+        <div className="home-logo">
+          <h1>
+            VetNelli <span>🐾</span>
+          </h1>
+
+          <p>
+            Sistema de gerenciamento de consultas veterinárias.
+          </p>
+        </div>
+
+        <div className="home-content">
+          <button
+            className="btn-entrar"
+            onClick={() => navigate("/consultas")}
+          >
+            Entrar no sistema
           </button>
-        </section>
-      </div>
+        </div>
+
+      </section>
     </main>
   );
 }
