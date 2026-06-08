@@ -121,18 +121,6 @@ function CadastrarConsulta() {
             <form onSubmit={cadastrarConsulta}>
               <dl className="card-info">
 
-                <dt>Idade</dt>
-                <dd>
-                  <select name="idadePet" required value={form.idadePet} onChange={handleChange}>
-                    <option value="">Selecione</option>
-                    <option value="filhote">Filhote</option>
-                    <option value="adulto">Adulto</option>
-                    <option value="idoso">Idoso</option>
-                  </select>
-                  {errors.criar.idadePet && (
-                    <span className="mensagem-errors">{errors.criar.idadePet}</span>
-                  )}
-                </dd>
 
                 <dt>Dono</dt>
                 <dd>
@@ -146,6 +134,19 @@ function CadastrarConsulta() {
                   />
                   {errors.criar.nomeDono && (
                     <span className="mensagem-errors">{errors.criar.nomeDono}</span>
+                  )}
+                </dd>
+                
+                <dt>Idade</dt>
+                <dd>
+                  <select name="idadePet" required value={form.idadePet} onChange={handleChange}>
+                    <option value="">Selecione</option>
+                    <option value="filhote">Filhote</option>
+                    <option value="adulto">Adulto</option>
+                    <option value="idoso">Idoso</option>
+                  </select>
+                  {errors.criar.idadePet && (
+                    <span className="mensagem-errors">{errors.criar.idadePet}</span>
                   )}
                 </dd>
 
