@@ -26,7 +26,7 @@ Sistema web para gerenciamento de consultas veterinárias desenvolvido com React
 
 <h3>Home</h3>
 <p align="center">
-  <img src="./screenshots/VetNelliFront/Home.PNG" width="900">
+  <img src="screenshots/VetNelliFront/Home.PNG" width="900">
 </p>
 
 <h3>Cadastro de Consulta</h3>
