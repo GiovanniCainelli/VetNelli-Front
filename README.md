@@ -56,9 +56,11 @@ src
 └── main.jsx
 ```
 
-## 🔗 Integração com Backend
+## Arquitetura do Projetod
 
-O frontend consome a API VetNelli desenvolvida em Spring Boot.
+Esta aplicação utiliza uma API REST desenvolvida separadamente em Spring Boot.
+
+🔗 Backend: https://github.com/GiovanniCainelli/vet-Nelli-API
 
 Principais operações disponíveis:
 
@@ -68,6 +70,9 @@ Principais operações disponíveis:
 * Alterar status das consultas
 * Excluir consultas
 * Receber mensagens de validação e erros da API
+
+
+
 
 ## ⚙️ Configuração
 
