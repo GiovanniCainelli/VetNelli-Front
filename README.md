@@ -1,18 +1,117 @@
-# React + Vite
+# VetNelli Frontend 🐾
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sistema web para gerenciamento de consultas veterinárias desenvolvido com React.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* React
+* React Router DOM
+* Axios
+* CSS3
+* Vite
 
-## React Compiler
+## ⚙️ Funcionalidades
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+* Cadastro de consultas veterinárias
+* Listagem de consultas
+* Edição de consultas
+* Exclusão de consultas
+* Atualização de status das consultas
+* Busca de consultas por nome do dono
+* Validação de formulários
+* Tratamento de erros retornados pela API
+* Interface responsiva
 
-Note: This will impact Vite dev & build performances.
+<h2>📸 Screenshots</h2>
 
-## Expanding the ESLint configuration
+<p align="center">
+  <img src="./src/assets/screenshots/VetNelliFront/home.png" width="700">
+</p>
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<p align="center">
+  <img src="./src/assets/screenshots/VetNelliFront/cadastro.png" width="700">
+</p>
+
+<p align="center">
+  <img src="./src/assets/screenshots/VetNelliFront/consultas.png" width="700">
+</p>
+
+## 📁 Estrutura do Projeto
+
+```text
+src
+├── components
+├── pages
+├── services
+├── css
+├── App.jsx
+└── main.jsx
+```
+
+## 🔗 Integração com Backend
+
+O frontend consome a API VetNelli desenvolvida em Spring Boot.
+
+Principais operações disponíveis:
+
+* Criar consultas
+* Buscar consultas
+* Atualizar consultas
+* Alterar status das consultas
+* Excluir consultas
+* Receber mensagens de validação e erros da API
+
+## ⚙️ Configuração
+
+Crie um arquivo `.env` na raiz do projeto:
+
+```env
+VITE_API_URL=http://localhost:8080
+```
+
+## ▶️ Como Executar
+
+Clone o projeto:
+
+```bash
+git clone https://github.com/GiovanniCainelli/vetnelli-frontend.git
+```
+
+Entre na pasta:
+
+```bash
+cd vetnelli-frontend
+```
+
+Instale as dependências:
+
+```bash
+npm install
+```
+
+Execute a aplicação:
+
+```bash
+npm run dev
+```
+
+A aplicação estará disponível em:
+
+```text
+http://localhost:5173
+```
+
+## 🎯 Próximas Melhorias
+
+* Autenticação com JWT
+* Controle de usuários
+* Dashboard com métricas
+* Deploy da aplicação
+* Testes automatizados
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Giovanni Cainelli**
+
+* Estudante de Análise e Desenvolvimento de Sistemas
+* Desenvolvedor Java e React
