@@ -53,7 +53,10 @@ function CadastrarConsulta() {
   async function atualizarConsulta(id) {
     try {
       await api.put(`/consultas/${id}`, formEdicao);
-      await api.patch(`/consultas/${id}/status?status=${formEdicao.status}`);
+      if (formEdicao.status) {
+
+        await api.patch(`/consultas/${id}/status?status=${formEdicao.status}`);
+      }
       const response = await api.get(`/consultas/${id}`);
       setConsultaCriada(response.data);
       setEditId(null);
@@ -136,7 +139,7 @@ function CadastrarConsulta() {
                     <span className="mensagem-errors">{errors.criar.nomeDono}</span>
                   )}
                 </dd>
-                
+
                 <dt>Idade</dt>
                 <dd>
                   <select name="idadePet" required value={form.idadePet} onChange={handleChange}>
