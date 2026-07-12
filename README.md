@@ -12,14 +12,18 @@ Sistema web para gerenciamento de consultas veterinárias desenvolvido com React
 
 ## ⚙️ Funcionalidades
 
-* Cadastro de consultas veterinárias
-* Listagem de consultas
-* Edição de consultas
-* Exclusão de consultas
-* Atualização de status das consultas
-* Busca de consultas por nome do dono
+### Autenticação
+* Cadastro de usuários
+* Login com JWT
+
+### Consultas
+* Cadastro, listagem, edição e exclusão
+* Atualização de status
+* Busca por nome do dono
+
+### Geral
 * Validação de formulários
-* Tratamento de erros retornados pela API
+* Tratamento de erros da API
 * Interface responsiva
 
 <h2>📸 Screenshots</h2>
@@ -28,6 +32,19 @@ Sistema web para gerenciamento de consultas veterinárias desenvolvido com React
 <p align="center">
   <img src="screenshots/VetNelliFront/Home.PNG" width="900">
 </p>
+
+
+<h3>Cadastro Usuário</h3>
+<p align="center">
+  <img src="screenshots/VetNelliFront/cadastroUser.PNG" width="900">
+</p>
+
+
+<h3>Login</h3>
+<p align="center">
+  <img src="screenshots/VetNelliFront/Login.PNG" width="900">
+</p>
+
 
 <h3>Cadastro de Consulta</h3>
 <p align="center">
@@ -51,6 +68,7 @@ src
 ├── components
 ├── pages
 ├── services
+└── auth
 ├── css
 ├── App.jsx
 └── main.jsx
@@ -64,6 +82,8 @@ Esta aplicação utiliza uma API REST desenvolvida separadamente em Spring Boot.
 
 Principais operações disponíveis:
 
+* Autenticação JWT com SpringBoot
+* Validação utilizando tokens
 * Criar consultas
 * Buscar consultas
 * Atualizar consultas
@@ -115,9 +135,7 @@ http://localhost:5173
 ```
 
 ## 🎯 Próximas Melhorias
-
-* Autenticação com JWT
-* Controle de usuários
+* Painel Administrativo de Usuários
 * Dashboard com métricas
 * Deploy da aplicação
 * Testes automatizados

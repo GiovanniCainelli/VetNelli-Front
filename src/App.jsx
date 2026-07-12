@@ -8,7 +8,6 @@ import CadastrarConsulta from "./pages/CadastrarConsulta";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 
-// Componente que protege rotas privadas
 function PrivateRoute({ children }) {
     const { user } = useAuth();
     return user ? children : <Navigate to="/login" />;
